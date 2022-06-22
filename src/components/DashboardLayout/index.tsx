@@ -1,15 +1,18 @@
-import Navbar from "../Navbar"
+
+import { ReactNode } from "react"
 import { SideBar } from "../SideBar"
 import { SLayout, SMain } from "./style"
 
+interface InterfaceProps{
+    children: ReactNode
+}
 
-
-export const DahboardLayout = ()=>{
+export const DahboardLayout = ({children}:InterfaceProps)=>{
     return(
+        
         <SLayout>
             <SideBar/>
-            <Navbar/>
-            <SMain>maindsada</SMain>
+            <SMain>{children}</SMain>
         </SLayout>
     )
 }

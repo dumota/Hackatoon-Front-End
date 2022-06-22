@@ -1,10 +1,10 @@
-import { Navinha} from "./style"
+import { NavBarStyle} from "./style"
 
 export default function Navbar() {
     
     return(
-        <Navinha>
-            <div>oi</div>
-        </Navinha>
+        <NavBarStyle>
+            oi
+        </NavBarStyle>
     )
 }

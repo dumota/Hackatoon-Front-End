@@ -1,15 +1,16 @@
-import { Divider, LinkContainer, Logo, Sidebar, SLink, SLinkIcon, SLinkLabel, SLinkNotification, SSidebarButton, Stheme, SThemeLabel, SThemeTooggler, SToggleThumb } from "./style";
+import { Divider, LinkContainer, Logo, Sidebar, SLink, SLinkIcon, SLinkLabel, SSidebarButton, Stheme, SThemeLabel, SThemeTooggler, SToggleThumb } from "./style";
 import { AiOutlineHome, AiOutlineLeft } from 'react-icons/ai'
 import { MdLogout } from 'react-icons/md'
 import Link from "next/link";
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/themeContext";
 import { useState } from "react";
+import Navbar from "../Navbar";
 
 export function SideBar() {
 
     const { setTheme, theme } = useContext(ThemeContext);
-    const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
 
     console.log(theme);
 
@@ -30,15 +31,20 @@ export function SideBar() {
             <Divider />
             {linksArray.map(({ icon, label, to }) => (
                 <LinkContainer key={label} >
-                    <SLink href={to} style={!sidebarOpen ? { width: `fit-content` } : {}}>
-                        <SLinkIcon>{icon}</SLinkIcon>
-                        {sidebarOpen && (
-                            <>
-                                <SLinkLabel>{label}</SLinkLabel>
-                                {/* if notifications are at 0 or null, do not display */}
-                            </>
-                        )}
-                    </SLink>
+                    <Link href={to}>
+                        <SLink style={!sidebarOpen ? { width: `fit-content` } : {}}> 
+                            <SLinkIcon>{icon}</SLinkIcon>
+                            {
+                                sidebarOpen && (
+                                    <>
+                                       <SLinkLabel>{label}</SLinkLabel> 
+                                    </>
+                                )
+                            }
+                        </SLink>
+                    </Link>
+                  
+
                 </LinkContainer>
             ))}
             <Divider />
@@ -69,14 +75,14 @@ export function SideBar() {
 
 const linksArray = [
     {
-        label: "login",
+        label: "Dashboard",
         icon: <AiOutlineHome />,
-        to: "/login"
+        to: "/dashboard"
     },
     {
-        label: "home",
+        label: "Clientes",
         icon: <AiOutlineHome />,
-        to: "/login"
+        to: "/cliente"
     },
     {
         label: "clientes",

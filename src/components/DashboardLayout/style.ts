@@ -6,5 +6,9 @@ export const SLayout = styled.div`
 `
 
 export const SMain = styled.div`
-    padding: calc(${v.xxlSpacing}*2);
+    padding: 20px;
+    width: 100%;
+    background: yellow;
+    color: black;
+    
 `
