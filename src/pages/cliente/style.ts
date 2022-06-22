@@ -118,3 +118,27 @@ export const NavigationButton = styled.div`
         
     }
 `
+
+export const BtnTop = styled.div`
+    
+    display: flex;
+    float: right;
+    height: 45px;
+    background: none;
+    margin-bottom: 20px;
+   
+
+    button{
+        background: purple;
+        border-radius: 20px;
+        margin-right: 30px;
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+        transition: .2s;
+
+        :hover{
+            background: paleturquoise;
+        }
+    }
+`

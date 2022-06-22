@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { DahboardLayout } from "../../components/DashboardLayout";
 import { SMain } from "../../components/DashboardLayout/style";
 import Navbar from "../../components/Navbar";
-import { ContainerCircleButton, NavigationButton, Table } from "./style";
+import { BtnTop, ContainerCircleButton, NavigationButton, Table } from "./style";
 import {BsFillTrash2Fill, BsPencilSquare} from 'react-icons/bs'
 import {IoEyeSharp} from 'react-icons/io5';
+import Modal from "../../components/Modal";
+
 
 
 
@@ -18,6 +20,9 @@ export default function Cliente() {
     const startIndex = currentPage * itensPerPage;
     const endIndex = startIndex + itensPerPage;
     const currentItens = itens.slice(startIndex, endIndex);
+
+    const [showModal, setShowModal] = useState<boolean>(false);
+
 
 
 
@@ -46,6 +51,10 @@ export default function Cliente() {
             <Navbar />
             <DahboardLayout>
                 <SMain>
+                    <BtnTop>
+                        <button>Adicioinar Novo</button>
+                        <button>Adicionar Pesquisa</button>
+                    </BtnTop>
                     <Table>
 
                         <table>
@@ -72,7 +81,7 @@ export default function Cliente() {
                                             <ContainerCircleButton>
                                                 <button className="btn-edit" ><BsPencilSquare/></button>
                                                 <button><BsFillTrash2Fill/></button>
-                                                <button className="btn-view" ><IoEyeSharp/></button>
+                                                <button className="btn-view" onClick={()=> setShowModal(true)}><IoEyeSharp/></button>
                                             </ContainerCircleButton>
                                         </td>
                                     </tr>
@@ -89,6 +98,9 @@ export default function Cliente() {
                         </NavigationButton>
 
                     </Table>
+                    <Modal show={showModal} onClose={()=> setShowModal(false)}>
+                        <h1>ahahahhahah</h1>
+                    </Modal>
 
                 </SMain>
             </DahboardLayout>
