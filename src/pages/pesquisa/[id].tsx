@@ -2,36 +2,54 @@ import React, { useState } from "react";
 import { DahboardLayout } from "../../components/DashboardLayout";
 import { SMain } from "../../components/DashboardLayout/style";
 import Navbar from "../../components/Navbar";
+import { Form } from "./style";
+import { FaPlusCircle } from 'react-icons/fa';
 
 
-export default function Pesquisa(){
+export default function Pesquisa() {
 
-    const [contador, setContador] = useState(0);
+    const [contador, setContador] = useState(1);
+    var obj = new Object;
 
 
-    return(
+
+
+
+
+
+
+
+    return (
         <>
-            <Navbar />
+         
             <DahboardLayout>
                 <SMain>
-                  
-                    <div>
-                        {
-                            contador <= 4 ?
-                            <button onClick={()=> setContador(contador +1)}>
-                                Adicionar Nova pergunta
-                            </button>
-                            :<button>Adicionar Nova pergunta</button>
-                        }
-                      
-                       <div>
-                       {Array.from(Array(contador), (index) => {
-                          return(
-                            <input></input>
-                          )
-                        })}
-                       </div>
-                    </div>
+                    <Form >
+                        <form className="form">
+                            <h1>Pesquisa</h1>
+                            {
+                                contador <= 4 ?
+                                    <button type="button" onClick={() => setContador(contador + 1)}>
+                                        <span>+</span>
+                                    </button>
+                                    : <></>
+                            }
+                            <form >
+                                {Array.from(Array(contador), (index) => {
+                                    obj = contador
+                                    console.log(obj);
+
+                                    return (
+                                        <div className="input-group">
+                                                <label htmlFor="">{`Pergunta ${obj}`}</label>
+                                                <input type="text" />
+                                        </div>
+                                    )
+
+                                })}
+                            </form>
+                        </form>
+                    </Form>
                 </SMain>
             </DahboardLayout>
         </>

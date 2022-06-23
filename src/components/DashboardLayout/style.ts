@@ -8,7 +8,7 @@ export const SLayout = styled.div`
 export const SMain = styled.div`
     padding: 20px;
     width: 100%;
-    background: yellow;
-    color: black;
+    background: ${({theme})=> theme.bg3};
+    color: ${({theme})=> theme.bg};
     
 `

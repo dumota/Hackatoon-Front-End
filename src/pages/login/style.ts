@@ -4,7 +4,8 @@ import styled from "styled-components";
 export const Container = styled.div`
  
   div{ 
-        background-image:url('assets/background.jpg');
+        /* background-image:url('assets/background.jpg'); */
+        background: linear-gradient(to right, #1c003b 0%, #4b0374 79%);
         height: 100vh;
         background-size: cover;
         display: flex;

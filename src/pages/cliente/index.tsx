@@ -49,7 +49,7 @@ export default function Cliente() {
     return (
 
         <>
-            <Navbar />
+          
             <DahboardLayout>
                 <SMain>
                     <BtnTop>

@@ -7,7 +7,7 @@ import { Form } from "./style";
 export default function Cliente() {
     return (
         <>
-            <Navbar />
+            
             <DahboardLayout>
                 <SMain>
                     <Form>

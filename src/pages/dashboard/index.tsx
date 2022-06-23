@@ -7,7 +7,7 @@ export default function Dashboard(){
   
     return(
         <>
-            <Navbar />
+           
             <DahboardLayout>
                 <SMain>
                     <h1>dasshboard</h1>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { ThemesProvider } from "../../contexts/themeContext";
 
 export const Table = styled.div`
 
@@ -17,22 +18,23 @@ export const Table = styled.div`
 
     table{
            width: 100%;
-           background: #FFFFFF;
+           background: ${({theme})=> theme.table};
            box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
            border-collapse: collapse;
            max-height: 450px;
+           color: ${({theme})=> theme.text};
            thead{
-               background: #4caf50;
+               background:${({theme})=> theme.thead} ;
               
                tr , th{
                    text-align: left;
-                   color: #FFFFFF;
+                   color: ${({theme})=> theme.text};
                }
            }
           
            tbody:nth-child(even){
                tr{
-                   background-color: #EEEEEE;
+                   background-color: ${({theme})=> theme.table2};
                }
                
            }
@@ -41,6 +43,7 @@ export const Table = styled.div`
                padding: 15px;
                border: 1px solid #CCCCCC;
                max-width: 450px;
+               color: ${({theme})=> theme.textTable};
               
            }
 
@@ -65,7 +68,7 @@ export const ContainerCircleButton = styled.div`
         margin-right: 5px;
         background: red;
         :hover{
-            background: rebeccapurple;
+            background: #ff8554;
         }
     }
     .btn-view{
@@ -131,7 +134,7 @@ export const BtnTop = styled.div`
     
 
     button{
-        background: purple;
+        background:${({theme})=> theme.btncircle};
         border-radius: 20px;
         margin-right: 30px;
         text-align: center;
@@ -149,17 +152,18 @@ export const BtnTop = styled.div`
 
 export const Form = styled.div`
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0,0,0,.212);
 
     .form{
         width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        background-color: #fff;
-        padding: 3rem;
+        background-color: ${({theme})=> theme.form};
+        padding: 0 2rem 0 3rem;
+        margin: 0;
     }
     .form-header{
         margin-bottom: 3rem;
@@ -178,16 +182,22 @@ export const Form = styled.div`
         border-radius: 10px;
     }
     .input-group{
-        display: flex;
+        width: 80vh;
         flex-wrap: wrap;
-        justify-content: space-between;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 1rem 0;
+        font-size: 62px;
+        justify-content: center;
+       
     }
     .input-box{
         display: flex;
         flex-direction: column;
         margin-bottom: 1.1rem;
-        display: inline;
+        display:inline;
     }
     .input-box input{
         
@@ -196,9 +206,18 @@ export const Form = styled.div`
         border: none;
         border-radius: 10px;
         box-shadow: 1px 1px 6px #0000001c;
+        width: 70%;
+        ;
     }
     .input-box input:hover{
-        background-color: #eeeeee75;
+        
+       
+        color: white;
+       
+        box-shadow: 2px 20px 25px #dc2e685d;
+        border-color: #dc2e69;
+        cursor: pointer;
+    
     }
     .input-box input:focus-visible{
         outline: 1px solid #6c63ff;
