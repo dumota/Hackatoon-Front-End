@@ -1,11 +1,13 @@
 import { Divider, LinkContainer, Logo, Sidebar, SLink, SLinkIcon, SLinkLabel, SSidebarButton, Stheme, SThemeLabel, SThemeTooggler, SToggleThumb } from "./style";
 import { AiOutlineHome, AiOutlineLeft } from 'react-icons/ai'
 import { MdLogout } from 'react-icons/md'
+import {BiSearchAlt} from 'react-icons/bi';
+import {IoIosPeople} from 'react-icons/io';
 import Link from "next/link";
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/themeContext";
 import { useState } from "react";
-import Navbar from "../Navbar";
+
 
 export function SideBar() {
 
@@ -81,18 +83,23 @@ const linksArray = [
     },
     {
         label: "Clientes",
-        icon: <AiOutlineHome />,
+        icon: <IoIosPeople />,
         to: "/cliente"
     },
     {
-        label: "clientes",
-        icon: <AiOutlineHome />,
-        to: "/login"
+        label: "Pesquisas",
+        icon: <BiSearchAlt />,
+        to: "/pesquisa"
     },
     {
-        label: "pesquisas",
+        label: "Add cliente",
         icon: <AiOutlineHome />,
-        to: "/login"
+        to: "/cliente/criar"
+    },
+    {
+        label: "Add Pesquisa",
+        icon: <AiOutlineHome />,
+        to: "/pesquisa/criar"
     },
 ]
 

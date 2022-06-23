@@ -6,6 +6,7 @@ import { BtnTop, ContainerCircleButton, NavigationButton, Table } from "./style"
 import {BsFillTrash2Fill, BsPencilSquare} from 'react-icons/bs'
 import {IoEyeSharp} from 'react-icons/io5';
 import Modal from "../../components/Modal";
+import Link from "next/link";
 
 
 
@@ -52,7 +53,10 @@ export default function Cliente() {
             <DahboardLayout>
                 <SMain>
                     <BtnTop>
-                        <button>Adicioinar Novo</button>
+                        <button>
+                        <Link href={'/pesquisa'}>Adicioinar Novo</Link>
+                        </button>
+                        
                         <button>Adicionar Pesquisa</button>
                     </BtnTop>
                     <Table>
@@ -99,7 +103,7 @@ export default function Cliente() {
 
                     </Table>
                     <Modal show={showModal} onClose={()=> setShowModal(false)}>
-                        <h1>ahahahhahah</h1>
+                       
                     </Modal>
 
                 </SMain>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 export const Table = styled.div`
 
@@ -126,7 +127,8 @@ export const BtnTop = styled.div`
     height: 45px;
     background: none;
     margin-bottom: 20px;
-   
+    
+    
 
     button{
         background: purple;
@@ -136,9 +138,94 @@ export const BtnTop = styled.div`
         justify-content: center;
         padding: 10px;
         transition: .2s;
-
         :hover{
             background: paleturquoise;
         }
+
+
+        
+    }
+`
+
+export const Form = styled.div`
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.212);
+
+    .form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 3rem;
+    }
+    .form-header{
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .form-header h1::after{
+        content: '';
+        display: block;
+        width: 5rem;
+        height: 0.3rem;
+        background-color: #6c63ff;
+        margin: 0 auto;
+        position: absolute;
+        border-radius: 10px;
+    }
+    .input-group{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+    .input-box{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+        display: inline;
+    }
+    .input-box input{
+        
+        margin: 0.6 rem 0;
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px #0000001c;
+    }
+    .input-box input:hover{
+        background-color: #eeeeee75;
+    }
+    .input-box input:focus-visible{
+        outline: 1px solid #6c63ff;
+    }
+    .input-box label{
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #000000c0;
+    }
+    .input-box input::placeholder{
+        color: #000000be;
+    }
+    .continue-button{
+        display: flex;
+        justify-content: center;
+    }
+    .continue-button button{
+       
+        width: 50%;
+        margin-top: 2.5rem;
+        border: none;
+        background-color: #6c63ff;
+        padding: 0.62rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .continue-button button:hover{
+        background-color: #6b63fff1;
     }
 `
